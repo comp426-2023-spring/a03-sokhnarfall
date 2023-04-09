@@ -34,7 +34,7 @@ if (args.r || args.rules) {
 let action = args._[0];
 
 try {
-    console.log(JSON.stringify(rps_function(action)));
+    console.log(JSON.stringify(rps(action)));
     
 } catch (e){
     console.log(helpMessage);
