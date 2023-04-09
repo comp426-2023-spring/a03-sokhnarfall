@@ -1,28 +1,28 @@
 {
- "name": "node-rpsls",
- "version": "0.0.1",
- "description": "Creating a module-based line Node.js package (with CLI)",
- "main": "./lib/roll.js",
- "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1"
- },
- "repository": {
-  "type": "git",
-  "url": "git+https://github.com/comp426-2023-spring/a03-sokhnarfall.git"
- },
- "bin": {
-  "node-rps": "./bin/rps-cli.js",
-  "node-rpsls": "./bin/rpsls-cli.js"
- },
- "author": "sokhnarfall",
- "license": "MIT",
- "bugs": {
-  "url": "https://github.com/comp426-2023-spring/a03-sokhnarfall/issues"
- },
- "homepage": "https://github.com/comp426-2023-spring/a03-sokhnarfall#readme",
- "dependencies": {
-  "minimist": "^1.2.8",
-  "node-rpsls": "^1.0.0"
- }
- "type": "module"
+  "name": "node-rpsls",
+  "version": "0.0.1",
+  "description": " Create a module-based command line Node.js package (with CLI)",
+  "main": "./lib/rpsls.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2023-spring/a03-sokhnarfall.git"
+  },
+  "bin": {
+    "node-rps": "./bin/rps-cli.js",
+    "node-rpsls": "./bin/rpsls-cli.js"
+  },
+  "author": "sokhnarfall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a03-sokhnarfall/issues"
+  },
+  "homepage": "https://github.com/comp426-2023-spring/a03-sokhnarfall#readme",
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "node-rpsls": "^1.0.0"
+  },
+  "type": "module"
 }
