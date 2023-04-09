@@ -1,31 +1,29 @@
 #!/usr/bin/env node
+import minimist from 'minimist'
+import { rpsls } from 'node-rpsls'
 
-import minimist from "minimist";
-import { rpsls } from 'node-rpsls';
 
 const args = minimist(process.argv.slice(2));
+const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:\n\n',
+    ' - Scissors CUTS Paper\n',
+    ' - Paper COVERS Rock\n',
+    ' - Rock SMOOSHES Lizard\n',
+    ' - Lizard POISONS Spock\n',
+    ' - Spock SMASHES Scissors\n',
+    ' - Scissors DECAPITATES Lizard\n',
+    ' - Lizard EATS Paper\n',
+    ' - Paper DISPROVES Spock\n',
+    ' - Spock VAPORIZES Rock\n',
+    ' - Rock CRUSHES Scissors`;
 
-const rules = `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
-- Scissors CUTS Paper
-- Paper COVERS Rock
-- Rock SMOOSHES Lizard
-- Lizard POISONS Spock
-- Spock SMASHES Scissors
-- Scissors DECAPITATES Lizard
-- Lizard EATS Paper
-- Paper DISPROVES Spock
-- Spock VAPORIZES Rock
-- Rock CRUSHES Scissors`;
+const helpMessage= `Usage: node-rpsls [SHOT]\nPlay the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!\n\n',
+    '  -h, --help        display this help message and exit\n',
+    '  -r, --rules       display the rules and exit\n\nExamples:\n',
+    '  node-rpsls        Return JSON with single player RPSLS result.\n',
+    '                    e.g. {"player":"rock"}\n',
+    '  node-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.\n',
+    '                    e.g {"player":"rock","opponent":"Spock","result":"lose"}`;
 
-const helpMessage= `Usage: node-rpsls [SHOT]
-Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!
-  -h, --help        display this help message and exit
-  -r, --rules       display the rules and exit
-Examples:
-  node-rpsls        Return JSON with single player RPSLS result.
-                    e.g. {"player":"rock"}
-  node-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.
-                    e.g {"player":"rock","opponent":"Spock","result":"lose"}`;
 
 if (args.h || args.help) {
   console.log(helpMessage);
@@ -38,15 +36,13 @@ if (args.r || args.rules) {
   process.exit(0);
 }
 
-const action = args._[0];
+let action = args._[0];
 
 try {
-    console.log(JSON.stringify(rpsls(rps(action)));
-
+    console.log(JSON.stringify(rpsls(rps(action))));
+    
 } catch (e){
     console.log(helpMessage);
     console.log(rules);
     process.exit(0);
 }
-
-
