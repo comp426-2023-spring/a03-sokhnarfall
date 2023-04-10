@@ -36,7 +36,7 @@ let action = args._[0];
 try {
     console.log(JSON.stringify(rps(action)));
 } 
-catch (e){
+catch (error){
     console.log(helpMessage);
     console.log(rules);
     process.exit(0);
