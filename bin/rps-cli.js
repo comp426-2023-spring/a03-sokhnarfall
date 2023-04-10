@@ -39,7 +39,7 @@ try {
 } catch (e){
     console.log(helpMessage);
     console.log(rules);
-    process.exit(1);
+    process.exit(0);
 }
 
 
