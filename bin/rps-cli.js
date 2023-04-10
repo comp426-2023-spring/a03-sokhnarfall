@@ -9,7 +9,7 @@ const rules = `Rules for Rock Paper Scissors:
 - Paper COVERS Rock
 - Rock CRUSHES Scissors`;
 
-const helpMessage= `Usage: node-rps [SHOT]
+const helpMessage = `Usage: node-rps [SHOT]
 Play Rock Paper Scissors (RPS)
   -h, --help      display this help message and exit
   -r, --rules     display the rules and exit
@@ -34,16 +34,13 @@ if (args.r || args.rules) {
 let action = args._[0];
 
 try {
-    console.log(JSON.stringify(rps(rps(action))));
-    
-} catch (e){
+    console.log(JSON.stringify(rps(action)));
+} 
+catch (e){
     console.log(helpMessage);
     console.log(rules);
     process.exit(0);
 }
-
-
-
 
 
 
